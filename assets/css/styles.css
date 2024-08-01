@@ -67,7 +67,7 @@ img {
 }
 
 .logo-image {
-    width: 9.5rem;
+    width: 15rem;
     margin-inline: auto;
 }
 
@@ -105,8 +105,8 @@ img {
 }
 
 .description {
-    font-size: 2vw;
-    padding-block: 1rem;
+    font-size: 1vw;
+    padding-block: 3rem;
 }
 
 .cta {
@@ -125,11 +125,12 @@ img {
         display: grid;
         grid-template-columns: 12rem auto 1% ;
         grid-template-rows: 8% min-content min-content 1fr 5%;
+        row-gap:10px;
         grid-template-areas:
             "logo ... ... navbar dashboard"
             "... ... ... title title"
-            "... ... ... ... subtitle"
-            "... newsletter ... description description"
+            "... ... ... subtitle subtitle"
+            "... newsletter ... ... description"
             "... year ... name ...";
         overflow-y: scroll;
     }
@@ -165,9 +166,9 @@ img {
 
     .vertical-text {
         grid-area: newsletter;
-        font-size: 3vw;
+        font-size: 2vw;
         text-transform: uppercase;
-        justify-self: start;
+        justify-self: end;
     }
 
     .vertical-text-inner {
@@ -177,7 +178,9 @@ img {
 
     .description {
         grid-area: description;
-        max-width: 80%;
+        max-width: 90%;
+        align-self: center;
+        text-align: end;
     }
 
     .vertical-center {
