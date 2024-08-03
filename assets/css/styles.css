@@ -105,7 +105,7 @@ img {
 }
 
 .description {
-    font-size: 1vw;
+    font-size: 22px;
     padding-block: 3rem;
 }
 
@@ -178,9 +178,9 @@ img {
 
     .description {
         grid-area: description;
-        max-width: 90%;
+        max-width: 100%;
         align-self: center;
-        text-align: end;
+        text-align: start;
     }
 
     .vertical-center {
