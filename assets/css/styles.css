@@ -105,7 +105,7 @@ img {
 }
 
 .description {
-    font-size: 22px;
+    font-size: 20px;
     padding-block: 3rem;
 }
 
@@ -124,7 +124,7 @@ img {
         text-align: left;
         display: grid;
         grid-template-columns: 12rem auto 1% ;
-        grid-template-rows: 8% min-content min-content 1fr 5%;
+        grid-template-rows: 8% min-content min-content 70% 1%;
         row-gap:10px;
         grid-template-areas:
             "logo ... ... navbar dashboard"
@@ -132,7 +132,7 @@ img {
             "... ... ... subtitle subtitle"
             "... newsletter ... ... description"
             "... year ... name ...";
-        overflow-y: scroll;
+        overflow: hidden;
     }
 
     .logo {
