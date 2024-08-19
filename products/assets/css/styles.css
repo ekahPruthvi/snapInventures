@@ -73,6 +73,20 @@ img {
 
 .navbar {
     padding-block: 1.5rem;
+    background-color: #a8c215;
+    border-radius: 1px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px #3f3f3f;
+}
+
+.navbar:hover {
+    background-color: #daff06;
+    color: rgb(0, 0, 0);
 }
 
 .navbar ul {
