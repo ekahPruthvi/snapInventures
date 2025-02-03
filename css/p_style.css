@@ -46,6 +46,7 @@ body {
   "Line1" 
   "news"
   "Line2"
+  "Line3"
   "footer";
   grid-template-columns: 3fr;
   gap: 1vw;
@@ -78,6 +79,22 @@ body {
   margin-top: 10vw;
   padding-right: 3vw;
 }
+
+.page > div.line3{
+  grid-area: Line3;
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 5vw;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 2vw;
+  margin-top: 10vw;
+}
+
+
 
 .foot{
   margin-top: auto 0;
@@ -210,4 +227,14 @@ button {
 .menu {
   margin-left: auto;
   font-size: 2vw;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
 }
