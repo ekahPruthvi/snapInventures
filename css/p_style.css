@@ -92,8 +92,41 @@ body {
   border-radius: 10px;
   padding: 2vw;
   margin-top: 10vw;
+  overflow: auto;
 }
 
+.images{
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 80s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+.carr{
+  height: 5vh;
+  opacity: 0.7;
+  margin-left: 5vw;
+}
+
+.carr:hover{
+  opacity: 1;
+}
 
 
 .foot{
