@@ -96,7 +96,7 @@ body {
 .y{
   font-family: "League Spartan", serif;
   font-weight: 500;
-  font-size: 4vw;
+  font-size: 4vh;
   font-style: normal;
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .card-title {
-  font-size: 2vw;
+  font-size: 3vh;
   font-weight: 600;
   color: #2e54a7;
   padding: 1vw;
@@ -137,13 +137,13 @@ body {
 .card-body {
   margin: 13px 0 0 10px;
   color: rgb(31, 31, 31);
-  font-size: 1.4vw;
+  font-size: 1.6vh;
   padding: 1vw;
 }
 
 .page > div.line4{
   grid-area: Line4;
-  font-size: 1.5vw;
+  font-size: 2vh;
   font-weight: 200;
   font-variation-settings:"ROND" 0;
   margin-top: 10vw;
@@ -165,12 +165,7 @@ body {
   color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 0px 5px -3px #111;
-  opacity: 0.6;
   margin: 10px;
-}
-
-.ppl:hover{
-  opacity: 1;
 }
 
 
@@ -349,11 +344,12 @@ button {
 .link {
   cursor: crosshair;
   color: white;
+  font-size: 2vh;
 }
 
 .menu {
   margin-left: auto;
-  font-size: 2vw;
+  font-size: 3vh;
 }
 
 .tooltip {
