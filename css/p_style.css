@@ -47,10 +47,12 @@ body {
   "news"
   "Line2"
   "Line3"
+  "Line4"
+  "Line5"
   "footer";
   grid-template-columns: 3fr;
   gap: 1vw;
-  padding: 5vw;
+  padding: 3vw;
 }
 
 .page > div.contents{
@@ -82,6 +84,98 @@ body {
 
 .page > div.line3{
   grid-area: Line3;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  margin-top: 10vw;
+  padding-right: 3vw;
+  overflow: auto;
+  padding-bottom: 2vw;
+}
+
+.y{
+  font-family: "League Spartan", serif;
+  font-weight: 500;
+  font-size: 4vw;
+  font-style: normal;
+}
+
+.yus{
+  display:flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 5px;
+  width: 90vw;
+  height: 50vh;
+  border-radius: 5px;
+  background: #e8e8e8;
+  transition: 0.4s;
+  margin: 10px;
+}
+
+.card:hover {
+  translate: 0 -10px;
+}
+
+.card-title {
+  font-size: 2vw;
+  font-weight: 600;
+  color: #2e54a7;
+  padding: 1vw;
+  margin: 15px 0 0 10px;
+}
+
+.card-image {
+  width: 100%;
+  background-color: #c9c9c9;
+  border-radius: 5px;
+  box-shadow: inset 8px 8px 10px #c3c3c3;
+}
+
+.card-body {
+  margin: 13px 0 0 10px;
+  color: rgb(31, 31, 31);
+  font-size: 1.4vw;
+  padding: 1vw;
+}
+
+.page > div.line4{
+  grid-area: Line4;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  margin-top: 10vw;
+  background-color: #000000;
+  color: #ffb775;
+  width: 100;
+}
+
+.mgt{
+  display: flex;
+  flex-direction: column;
+}
+
+.ppl {
+  width: 320px;
+  padding: 12px;
+  justify-content: start;
+  background: #ffffff49;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px -3px #111;
+  opacity: 0.6;
+  margin: 10px;
+}
+
+.ppl:hover{
+  opacity: 1;
+}
+
+
+.page > div.line5 {
+  grid-area: Line5;
   font-family: "League Spartan", serif;
   font-optical-sizing: auto;
   font-style: normal;
