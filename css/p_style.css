@@ -217,6 +217,79 @@ body {
   opacity: 1;
 }
 
+.prodpage{
+  display: grid;
+  grid-template-areas:
+  "p1"
+  "mid" 
+  "p2";
+  grid-template-columns: 3fr;
+  padding-top: 20vw;
+}
+
+.prodpage > div.p1{
+  grid-area: p1;
+  left: 0;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  background-color: #001935;
+  color: #b6b6b6;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+}
+
+.p1 > div {
+  font-size: 3vw;
+  padding: 3vw;
+}
+
+.p1 > img {
+  width: 100vw;
+  box-shadow: #000000;
+  height: 10vh;
+  object-fit: cover;
+}
+
+.prodpage > div.mid{
+  grid-area: mid;
+  padding: 1vw;
+  text-align: center;
+  letter-spacing: 1vw;
+}
+
+.prodpage > div.p2{
+  grid-area: p2;
+  left: 0;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  background-color: #ffca85;
+  color: #000000;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.p2 > div {
+  font-size: 3vw;
+  padding: 3vw;
+}
+
+.p2 > img {
+  width: 100vw;
+  box-shadow: #000000;
+  height: 10vh;
+  object-fit: cover;
+}
+
+.btn{
+  color: wheat;
+  text-decoration: underline;
+}
 
 .foot{
   margin-top: auto 0;
@@ -324,6 +397,7 @@ svg path{
   font-size: 4vw;
   display: flex;
   align-items: center;
+  z-index: 999;
 }
 
 button {

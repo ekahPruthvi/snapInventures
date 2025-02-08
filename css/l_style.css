@@ -231,7 +231,7 @@ body {
   display: grid;
   grid-template-areas:
   "p1"
-  "mid" 
+  "mid"
   "p2";
   grid-template-columns: 3fr;
 }
