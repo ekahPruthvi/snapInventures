@@ -286,6 +286,77 @@ body {
   object-fit: cover;
 }
 
+.boo{
+  display: grid;
+  grid-template-areas:
+  "pp1"
+  "miid"
+  "pp2";
+  grid-template-columns: 3fr;
+}
+
+.boo > div.pp1{
+  grid-area: pp1;
+  left: 0;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  background-color: #001935;
+  color: #b6b6b6;
+  position:relative;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.pp1 > div {
+  font-size: 1vw;
+  position: absolute;
+  width: 100vw;
+  padding: 3vw;
+  margin-top: 20vh;
+  background: rgba(0, 0, 0, 0);
+}
+
+.pp1 > img {
+  width: 100vw;
+  object-fit: cover;
+  height: 80vh;
+  box-shadow: #000000;
+} 
+
+.boo > div.miid{
+  grid-area: miid;
+  padding: 2vh;
+  color: white;
+  background-color: #000000;
+}
+
+.boo> div.pp2{
+  grid-area: pp2;
+  left: 0;
+  font-size: 1.5vw;
+  font-weight: 200;
+  font-variation-settings:"ROND" 0;
+  background-color: #ffca85;
+  color: #000000;
+  position:relative;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.pp2 > div {
+  font-size: 1vw;
+  padding: 2vw;
+  margin-top: 6vh;
+}
+
+.pp2 > img {
+  height: 100vh;
+  box-shadow: #000000;
+}
+
 .btn{
   color: wheat;
   text-decoration: underline;
@@ -295,10 +366,10 @@ body {
   margin-top: auto 0;
   display: grid;
   grid-template-areas: 
-  "imgg ... pri"
+  "imgg ... ..."
   "sn ... ..."
   "sn ... ..."
-  "cw cw cw";
+  "pri cw cw";
   grid-template-columns: 3fr 1fr 1fr;
   gap: 1vw;
   background: rgb(9, 0, 0);
@@ -325,9 +396,10 @@ body {
 .foot > div.pri{
   grid-area: pri;
   color: white;
-  padding-top: 5vw;
+  padding: 3vw;
+  padding-bottom: 7vw;
   font-family: "League Spartan", serif;
-  font-size: 1.5vw;
+  font-size: 5vw;
   font-weight: 400;
   font-style: normal;
 }

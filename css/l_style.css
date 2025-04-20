@@ -323,7 +323,7 @@ body {
   width: 100vw;
   padding: 3vw;
   margin-top: 20vh;
-  background: black;
+  background: rgba(0, 0, 0, 0);
 }
 
 .pp1 > img {
@@ -331,13 +331,13 @@ body {
   object-fit: cover;
   height: 80vh;
   box-shadow: #000000;
-}
+} 
 
 .boo > div.miid{
   grid-area: miid;
-  padding: 1vw;
-  text-align: center;
-  letter-spacing: 1vw;
+  padding: 2vw;
+  color: white;
+  background-color: #000000;
 }
 
 .boo> div.pp2{
@@ -384,7 +384,7 @@ body {
   bottom: 0;
   height: 2px;
   width: 0;
-  background-color: #ffc506;
+  background-color: #FFB775;
   transition: 0.5s ease;
 }
 
@@ -404,7 +404,7 @@ body {
   bottom: 0;
   height: 0;
   width: 100%;
-  background-color: #ffc506;
+  background-color: #FFB775;
   transition: 0.4s ease;
   z-index: -1;
 }
