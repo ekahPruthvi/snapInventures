@@ -199,6 +199,7 @@ html {
   gap: 1em;
   animation: spin-opp 30s infinite linear;
   padding-left: 1em;
+  overflow: hidden;
 }
 
 
