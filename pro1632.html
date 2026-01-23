@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Machines - Product Catalog</title>
+    <style>
+        :root {
+            --cinnabar: #e55934;
+            --jasper: #d9594c;
+            --persian-orange: #ce8d66;
+            --citron: #c3bf6d;
+            --sage: #b7b868;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0f0f0f;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: rgb(14, 14, 14);
+            border: solid 1px rgb(68, 68, 68);
+            margin: 10px 0px 10px 10px;
+            padding: 2rem;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 98vh;
+            border-radius: 10px 0px 0px 10px;
+            overflow-y: auto;
+            z-index: 1000;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar h3 {
+            color: var(--cinnabar);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a5a5a5;
+            font-weight: 500;
+        }
+
+        .filter-group input[type="range"] {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-group input[type="checkbox"] {
+            margin-right: 0.5rem;
+            margin-bottom: 9px;
+        }
+
+        .price-range {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--jasper);
+        }
+
+        .size-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 300px;
+            padding: 10px;
+        }
+
+        .header {
+            text-align: start;
+            font-weight: 100;
+            height: 10vh;
+            border-radius: 0px 10px 0px 0px;
+            color: var(--cinnabar);
+            background-color: #161616;
+            border: solid 1px rgb(68, 68, 68);
+            border-left: 0px;
+            padding: 10px;
+        }
+
+        .header .h1txt {
+            font-size: 1.8rem;
+            /* margin-bottom: 0.1rem; */
+            color: white;
+        }
+
+        .header p{
+            font-size: 0.8rem;
+        }
+
+        .results-count {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            align-self: end;
+            margin-left: 69vw;
+            text-align: center;
+            width: 10vw;
+            border-radius: 5px;
+            background-color: var(--jasper);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 15px;
+        }
+
+        .product-card {
+            background: rgb(33, 33, 33);
+            border-radius: 2px;
+            overflow: hidden;
+            border: solid 1px rgb(68, 68, 68);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #3f3f3f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-size {
+            color: var(--citron);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cinnabar);
+        }
+
+        /* Mobile Styles */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.246);
+            color: rgb(255, 255, 255);
+            border: solid 1px black;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 0.8rem;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-110%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 0px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .header {
+                /* font-size: 2rem; */
+                border: 0px;
+                border-radius: 0px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fhead{
+            font-family: sans-serif;
+            font-weight: 200;
+            font-size: 40px;
+            color: var(--jasper);
+        }
+
+        .bobview{
+            border: solid 1px rgb(68, 68, 68);
+            border-top: 0px;
+            border-left: 0px;
+            height: 88vh;
+            overflow-x: auto;
+            padding: 10px;
+            border-radius: 0px 0px 10px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 5vw; fill:#ffffffab"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M96 128C83.1 128 71.4 135.8 66.4 147.8C61.4 159.8 64.2 173.5 73.4 182.6L256 365.3L256 480C256 488.5 259.4 496.6 265.4 502.6L329.4 566.6C338.6 575.8 352.3 578.5 364.3 573.5C376.3 568.5 384 556.9 384 544L384 365.3L566.6 182.7C575.8 173.5 578.5 159.8 573.5 147.8C568.5 135.8 556.9 128 544 128L96 128z"/></svg>
+    </button>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="fhead">
+                Filters
+            </div>
+            
+            <div class="filter-group">
+                <label>Size</label>
+                <div class="size-option">
+                    <input type="checkbox" id="small" value="Small">
+                    <label for="small">Small</label>
+                </div>
+                <div class="size-option">
+                    <input type="checkbox" id="medium" value="Medium">
+                    <label for="medium">Medium</label>
+                </div>
+                <div class="size-option">
+                    <input type="checkbox" id="large" value="Large">
+                    <label for="large">Large</label>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="filter-group">
+                <label>Price Range</label>
+                <input type="range" id="priceMin" min="0" max="1000000" value="0">
+                <input type="range" id="priceMax" min="0" max="1000000" value="1000000">
+                <div class="price-range">
+                    <span id="priceMinVal">₹0</span> - 
+                    <span id="priceMaxVal">₹10,00,000</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="h1txt">SnapIn Industrial Driers</div>
+                <p>High-quality agricultural machinery and equipment</p>
+            </header>
+            <div class="bobview">
+                <p class="results-count" id="resultsCount"></p>
+                <div class="products-grid" id="productsGrid">
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Sample product data for industrial machines [web:2][web:5][web:8]
+        const products = [
+            { id: 1, name: 'SID AIOX1', size: 'Large', price: 6326960, image: '<img src="assets/placeholder.svg" style="width:90px;"/>' },
+        ];
+
+        function renderProducts(productsToShow) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = productsToShow.map(product => `
+                <div class="product-card">
+                    <div class="product-image">${product.image}</div>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-mini">Size: ${product.size}</div>
+                        <div class="product-price">₹${product.price.toLocaleString()}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('resultsCount').textContent = `Showing ${productsToShow.length} products`;
+        }
+
+        function filterProducts() {
+            const selectedSizes = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+            const minPrice = parseInt(document.getElementById('priceMin').value) || 0;
+            const maxPrice = parseInt(document.getElementById('priceMax').value) || 10000000;
+
+            let filtered = products.filter(product => {
+                const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(product.size);
+                const priceMatch = product.price >= minPrice && product.price <= maxPrice;
+                return sizeMatch && priceMatch;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // Price slider sync
+        document.getElementById('priceMin').addEventListener('input', function() {
+            document.getElementById('priceMinVal').textContent = '₹' + this.value.toLocaleString();
+            filterProducts();
+        });
+
+        document.getElementById('priceMax').addEventListener('input', function() {
+            document.getElementById('priceMaxVal').textContent = '₹' + this.value.toLocaleString();
+            filterProducts();
+        });
+
+        // Size checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', filterProducts);
+        });
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        // Initial render
+        renderProducts(products);
+    </script>
+</body>
+</html>

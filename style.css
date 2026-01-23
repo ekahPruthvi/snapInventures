@@ -176,7 +176,7 @@ html {
   display: flex;
   margin: 100px auto;
   width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 .car::-webkit-scrollbar{
@@ -199,7 +199,6 @@ html {
   gap: 1em;
   animation: spin-opp 30s infinite linear;
   padding-left: 1em;
-  overflow: hidden;
 }
 
 
@@ -267,6 +266,7 @@ html {
   background-color: var(--cinnabar);
   color: var(--text-light);
   border-color: var(--cinnabar);
+  margin-right: 20px;
 }
 
 .btn-primary:hover {
@@ -314,8 +314,10 @@ section {
 
 .section-button{
   margin-top: 50px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-self: center;
   width: 100%;
 }
 
